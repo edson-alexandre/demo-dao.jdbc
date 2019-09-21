@@ -1,6 +1,6 @@
 package application;
 
-import java.util.Date;
+import java.util.List;
 
 import model.dao.DaoFactory;
 import model.dao.SellerDao;
@@ -18,6 +18,14 @@ public class Program {
 		Seller seller = sellerDao.findByID(3);
 		System.out.println(seller);
 		
+		System.out.println("\n==== TEST 2 : seller findByDepartment ====");
+		List<Seller> sellers = null;
+		Department department = new Department(2,null);
+		sellers = sellerDao.findByDepartment(department);
+		
+		for(Seller obj : sellers) {
+			System.out.println(obj);
+		}
 		
 
 	}
